@@ -1,0 +1,5 @@
+# list all files you dont want in repository
+
+.vscode
+node_modules
+.DS_Store
