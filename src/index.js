@@ -1,4 +1,5 @@
 import express from 'express';
+import {getItems} from './items.js';
 const hostname = '127.0.0.1';
 const app = express();
 const port = 3000;
@@ -11,10 +12,13 @@ app.use(express.json());
 
 // rest-apin resurssit tarjoillaan /api/-polun alla
 app.get('/api/', (req, res) => {
-  console.log('get-pyyntö juureen havaittu');
+  console.log('get-pyyntö apin juureen havaittu');
   console.log(req.url);
   res.send('Welcome to my REST API!');
 });
+
+// Items resurssin päätepisteet (endpoint)
+app.get('/api/items', getItems);
 
 // syötteen lukeminen reittiparametreista (route params)
 app.get('/api/sum/:num1/:num2', (req, res) => {
