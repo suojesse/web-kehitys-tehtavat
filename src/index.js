@@ -1,9 +1,16 @@
 import express from 'express';
+import cors from 'cors';
 import {addItem, deleteItem, editItem, getItemById, getItems} from './items.js';
 import {addUser, getUsers, login, getUserById} from './users.js';
 const hostname = '127.0.0.1';
 const app = express();
 const port = 3000;
+
+// middleware, mitä tarvitaan, jotta Ullan fronttiharjoitukset toimivat (Vite)
+// lisää myös: import cors from 'cors'; tiedoston yläosaan
+// ja asenna paketti: npm install cors
+app.use(cors());
+
 
 // Staattinen html-sivusto tarjoillaan palvelimen juuressa
 app.use('/', express.static('public'));
