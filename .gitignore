@@ -1,5 +1,4 @@
-# list all files you dont want in repository
-
+# list all files/folders you don't want to add version control
 .vscode
 node_modules
 .DS_Store
